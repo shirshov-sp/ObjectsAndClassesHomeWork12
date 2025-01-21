@@ -24,4 +24,21 @@ public class Book {
     public void setPublicationYear(int publicationYear) {
         this.publicationYear = publicationYear;
     }
+
+    @Override
+    public String toString() {
+        return title + ", " + author + ", " + publicationYear;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || this.getClass() != obj.getClass()) {
+            return false;
+        }
+        Book forComparison = (Book) obj;
+        return this.toString().equalsIgnoreCase(forComparison.toString());
+    }
 }

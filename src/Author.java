@@ -8,10 +8,38 @@ public class Author {
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
+    /**
+     * В видеоуроке сказали убирать this, где возможно.
+     * В тексте урока сказано, что this нужно применять.
+     * Для примера в одном классе убрал, в другом оставил.
+     */
+
     public String getLastName() {
-        return this.lastName;
+        return lastName;
+    }
+
+    @Override
+    public String toString() {
+        return name + " " + lastName;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || this.getClass() != obj.getClass()) {
+            return false;
+        }
+        Author forComparison = (Author) obj;
+        return this.toString().equalsIgnoreCase(forComparison.toString());
+    }
+
+    @Override
+    public int hashCode() {
+        return this.toString().length();
     }
 }
