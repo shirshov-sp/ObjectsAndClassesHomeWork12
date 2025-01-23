@@ -43,17 +43,4 @@ public class Book {
     public int hashCode() {
         return Objects.hash(title, author, publicationYear);
     }
-
-
-//    @Override
-//    public boolean equals(Object obj) {
-//        if (this == obj) {
-//            return true;
-//        }
-//        if (obj == null || this.getClass() != obj.getClass()) {
-//            return false;
-//        }
-//        Book forComparison = (Book) obj;
-//        return this.toString().equalsIgnoreCase(forComparison.toString());
-//    }
 }
